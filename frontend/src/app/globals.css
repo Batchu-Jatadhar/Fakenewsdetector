@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0F172A;
+  --surface: #1E293B;
+  --surface-light: #334155;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --trust: #10B981;
+  --danger: #EF4444;
+  --uncertain: #F59E0B;
+  --accent: #6366F1;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-surface-light hover:bg-slate-500 text-white rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .btn-danger {
+    @apply px-6 py-3 bg-danger hover:bg-danger-dark text-white rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-surface rounded-xl border border-slate-700 p-6;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-surface-dark border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-safe {
+    @apply badge bg-emerald-500/20 text-emerald-400;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-500/20 text-red-400;
+  }
+
+  .badge-uncertain {
+    @apply badge bg-amber-500/20 text-amber-400;
+  }
+
+  .badge-pending {
+    @apply badge bg-slate-500/20 text-slate-400;
+  }
+}
